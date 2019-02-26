@@ -29,7 +29,7 @@ module "icpprovision" {
       "service_cluster_ip_range"        = "${var.service_network_cidr}"
       # "cluster_CA_domain"               = "${ibm_lbaas.master-lbaas.vip}"
       "cluster_name"                    = "${var.deployment}"
-      "calico_ip_autodetection_method"  = "interface=eth1"
+      "calico_ip_autodetection_method"  = "interface=eth0"
 
       # An admin password will be generated if not supplied in terraform.tfvars
       "default_admin_password"          = "${local.icppassword}"
