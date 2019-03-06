@@ -15,7 +15,7 @@ module "icpprovision" {
     }
 
     # Provide desired ICP version to provision
-    icp-version = "${var.icp_inception_image}"
+    icp-inception = "${var.icp_inception_image}"
 
     /* Workaround for terraform issue #10857
      When this is fixed, we can work this out automatically */
