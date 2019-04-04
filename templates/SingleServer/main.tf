@@ -4,8 +4,6 @@
 ##
 #####################################################################
 
-## REFERENCE {"ibm_network":{"type": "ibm_reference_network"}}
-
 terraform {
   required_version = "> 0.8.0"
 }
@@ -25,13 +23,11 @@ resource "ibm_compute_vm_instance" "single_vm" {
   datacenter  = "${var.single_vm_datacenter}"
   ssh_key_ids = ["${ibm_compute_ssh_key.auth.id}"]
   os_reference_code = "${var.single_vm_os_reference_code}"
-  public_vlan_id       = "${var.ibm_network_public_vlan_id}"
-  private_vlan_id       = "${var.ibm_network_private_vlan_id}"
   hourly_billing = true
-  local_disk = false
+  local_disk = "${var.local_disk}"
   disks = [100,350]
-  private_security_group_ids = ["${var.ICP_private_private_id}"]
-  public_security_group_ids = ["${var.ICP_public_public_id}"]
+  private_security_group_ids = "ICP_private"
+  public_security_group_ids = "ICP_public"
 }
 
 resource "tls_private_key" "ssh" {

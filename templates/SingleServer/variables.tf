@@ -40,23 +40,9 @@ variable "ibm_ssh_key_name" {
   description = "Generated"
 }
 
-variable "ibm_network_public_vlan_id" {
+variable "local_disk" {
   type = "string"
   description = "Generated"
-}
-
-variable "ibm_network_private_vlan_id" {
-  type = "string"
-  description = "Generated"
-}
-
-variable "ICP_private_private_id" {
-  type = "string"
-  description = "Generated"
-}
-
-variable "ICP_public_public_id" {
-  type = "string"
-  description = "Generated"
+  default = "false"
 }
 
