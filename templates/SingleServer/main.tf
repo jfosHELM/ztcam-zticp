@@ -15,14 +15,6 @@ provider "ibm" {
 }
 
 
-data "ibm_security_group" "ICP_private" {
-    name = "${var.ICP_private_name}"
-}
-
-data "ibm_security_group" "ICP_public" {
-    name = "${var.ICP_public_name}"
-}
-
 resource "ibm_compute_vm_instance" "single_vm" {
   cores       = 8
   memory      = 16384
@@ -34,8 +26,8 @@ resource "ibm_compute_vm_instance" "single_vm" {
   hourly_billing = true
   local_disk = "${var.local_disk}"
   disks = [100,350]
-  private_security_group_ids = ["${data.ibm_security_group.ICP_private.id}"]
-  public_security_group_ids = ["${data.ibm_security_group.ICP_public.id}"]
+  private_security_group_ids = [ICP_private]
+  public_security_group_ids = [ICP_public]
 }
 
 resource "tls_private_key" "ssh" {
