@@ -29,10 +29,7 @@ resource "ibm_compute_vm_instance" "single_vm" {
   private_vlan_id       = "${var.ibm_network_private_vlan_id}"
   hourly_billing = true
   local_disk = false
-  disks = [
-    "${var.["disk_size"]}",
-    "${var.["docker_vol_size"]}"
-  ]
+  disks = [100,350]
   private_security_group_ids = ["${var.ICP_private_private_id}"]
   public_security_group_ids = ["${var.ICP_public_public_id}"]
 }
