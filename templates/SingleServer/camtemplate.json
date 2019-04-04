@@ -1,0 +1,14 @@
+{
+   "name": "SingleServer",
+   "description": "Description for SingleServer.",
+   "type": "userCreated",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "Other"
+   },
+   "metadata": {
+     "displayName": "SingleServer",
+     "bullets": []
+   }
+ }
