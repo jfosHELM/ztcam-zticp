@@ -46,3 +46,13 @@ variable "local_disk" {
   default = "false"
 }
 
+variable "ICP_private_name" {
+  type = "string"
+  description = "Generated"
+}
+
+variable "ICP_public_name" {
+  type = "string"
+  description = "Generated"
+}
+

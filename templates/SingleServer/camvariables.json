@@ -145,6 +145,34 @@
       "hidden": false,
       "immutable": false,
       "immutable_after_create": false
+    },
+    {
+      "name": "ICP_private_name",
+      "label": "Icp Private Name",
+      "description": "Generated",
+      "type": "string",
+      "default": "",
+      "validation": "",
+      "group_name": "security",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false
+    },
+    {
+      "name": "ICP_public_name",
+      "label": "Icp Public Name",
+      "description": "Generated",
+      "type": "string",
+      "default": "",
+      "validation": "",
+      "group_name": "security",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false
     }
   ],
   "template_output_params": [ ]
