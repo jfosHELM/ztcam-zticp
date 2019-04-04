@@ -36,7 +36,7 @@ variable "single_vm_os_reference_code" {
 }
 
 variable "ibm_ssh_key_name" {
-  type = "string"
+  type = "list"
   description = "Generated"
 }
 
@@ -47,12 +47,12 @@ variable "local_disk" {
 }
 
 variable "ICP_private_name" {
-  type = "string"
+  type = "list"
   description = "Generated"
 }
 
 variable "ICP_public_name" {
-  type = "string"
+  type = "list"
   description = "Generated"
 }
 

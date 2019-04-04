@@ -26,8 +26,8 @@ resource "ibm_compute_vm_instance" "single_vm" {
   hourly_billing = true
   local_disk = "${var.local_disk}"
   disks = [100,350]
-  private_security_group_ids = [ICP_private]
-  public_security_group_ids = [ICP_public]
+  private_security_group_ids = ["${var.ICP_private_name}"]
+  public_security_group_ids = ["${var.ICP_public_name}"]
 }
 
 resource "tls_private_key" "ssh" {
