@@ -5,8 +5,6 @@ Sample files to create a single VM on IBM Cloud IaaS platform
 steve_strutt@uk.ibm.com. Extended to deply ICP/CAM/MCM jfoster@ztech.io
 Licensed under the Apache License, Version 2.0 (the "License");
 
-This sample is intended for use with the following tutorial:
-https://github.ibm.com/Bluemix-Docs/recipes/edit/staging/terraform-install.md
 
 
 ## Dependencies
