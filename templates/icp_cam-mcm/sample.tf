@@ -6,8 +6,8 @@ resource "ibm_compute_vm_instance" "cam-mcm" {
   network_speed        = 100
   hourly_billing       = true
   private_network_only = false
-  cores                = 8
-  memory               = 16384
+  cores                = 16
+  memory               = 32768
   disks                = [100,350]
   local_disk           = false
   private_security_group_ids = [1117823]
