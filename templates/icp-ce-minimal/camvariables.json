@@ -171,7 +171,7 @@
       "label": "Domain to be used on the VMs",
       "description": "Specify domain name to be used for linux customization on the VMs, or leave blank to use <instance_name>.icp",
       "type": "string",
-      "default": "icp.com",
+      "default": "ztechsl.io",
       "validation": "",
       "group_name": "Instances",
       "required": false,
