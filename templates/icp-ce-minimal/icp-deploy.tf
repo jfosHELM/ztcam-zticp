@@ -5,13 +5,13 @@ module "icpprovision" {
     source = "github.com/ibm-cloud-architecture/terraform-module-icp-deploy.git?ref=3.1.1"
 
     # Provide IP addresses for boot, master, mgmt, va, proxy and workers
-    boot-node = "${ibm_compute_vm_instance.icp-master.ipv4_address_private}"
+    boot-node = "${ibm_compute_vm_instance.icp-master.ipv4_address}"
     icp-host-groups = {
-        master = ["${ibm_compute_vm_instance.icp-master.*.ipv4_address_private}"]
-        proxy = ["${ibm_compute_vm_instance.icp-proxy.*.ipv4_address_private}"]
-        worker = ["${ibm_compute_vm_instance.icp-worker.*.ipv4_address_private}"]
-        management = ["${ibm_compute_vm_instance.icp-mgmt.*.ipv4_address_private}"]
-        va = ["${ibm_compute_vm_instance.icp-va.*.ipv4_address_private}"]
+        master = ["${ibm_compute_vm_instance.icp-master.*.ipv4_address}"]
+        proxy = ["${ibm_compute_vm_instance.icp-proxy.*.ipv4_address}"]
+        worker = ["${ibm_compute_vm_instance.icp-worker.*.ipv4_address}"]
+        management = ["${ibm_compute_vm_instance.icp-mgmt.*.ipv4_address}"]
+        va = ["${ibm_compute_vm_instance.icp-va.*.ipv4_address}"]
     }
 
     # Provide desired ICP version to provision
@@ -52,15 +52,15 @@ module "icpprovision" {
 }
 
 output "ICP Console URL" {
-  value = "https://${element(ibm_compute_vm_instance.icp-master.*.ipv4_address_private, 0)}:8443"
+  value = "https://${element(ibm_compute_vm_instance.icp-master.*.ipv4_address, 0)}:8443"
 }
 
 output "ICP Proxy" {
-  value = "${element(ibm_compute_vm_instance.icp-proxy.*.ipv4_address_private, 0)}"
+  value = "${element(ibm_compute_vm_instance.icp-proxy.*.ipv4_address, 0)}"
 }
 
 output "ICP Kubernetes API URL" {
-  value = "https://${element(ibm_compute_vm_instance.icp-master.*.ipv4_address_private, 0)}:8001"
+  value = "https://${element(ibm_compute_vm_instance.icp-master.*.ipv4_address, 0)}:8001"
 }
 
 output "ICP Admin Username" {
